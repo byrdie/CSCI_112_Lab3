@@ -22,12 +22,34 @@ int main(int argc, char** argv) {
     int condition_A, condition_B;
 
     int i, j, k; //Looping variables
-    for (i = 1; i < 7; i++) {
+    /*loop through all problems*/
+    for (i = 1; i < 6; i++) {
+        switch (i) {
+            case 1:
+                puts("Problem 1:");
+                break;
+            case 2:
+                puts("Problem 2:");
+                break;
+            case 3:
+                puts("Problem 3:");
+                break;
+            case 4:
+                puts("Problem 4:");
+                break;
+            case 5:
+                puts("Problem 5");
+                break;
+            default:
+                puts("Problem invalid");
+                break;
+        }
         if (i == 4) { //Do problem 4
             for (j = 0; j < 11; j++) {
                 problem_4(j);
             }
-        } else {
+        } else { //do all other problems
+            /*create truth tables using nested loops*/
             for (j = 0; j < 2; j++) {
                 for (k = 0; k < 2; k++) {
                     condition_A = j;
@@ -36,6 +58,8 @@ int main(int argc, char** argv) {
                     condition_B = k;
                     printf("B:");
                     printBoolean(condition_B);
+
+                    /*once truth table is constructed, call functions*/
                     switch (i) {
                         case 1:
                             problem_1(condition_A, condition_B);
@@ -54,10 +78,12 @@ int main(int argc, char** argv) {
                             break;
                     }
                 }
-            }            
+            }
         }
         printf("\n");
     }
+    puts("Extra Credit Problem:");
+    extra_credit();
     return (EXIT_SUCCESS);
 }
 
@@ -127,13 +153,18 @@ void problem_4(int input_condition) {
 }
 
 /*Problem 5: Correctly executes the problem statement truth table*/
-void problem_5(int condition_A, int condition_B){
-    if(condition_A == condition_B){
+void problem_5(int condition_A, int condition_B) {
+    if (condition_A == condition_B) {
         printf("X \n");
-    }
-    else{
+    } else {
         printf("Y \n");
     }
 }
 
 /*Extra Credit: change the function so it prints */
+void extra_credit() {
+    double x = 1.1;
+    if (x == 1.1) {
+        printf("This should print.\n");
+    }
+}
